@@ -26,5 +26,13 @@ input {
 
 button {
     background-color: #DDD;
-    
+    width: 110px;
+    margin: 20px;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+button:hover {
+    background-color: #000;
+    color: #FFF;
 }

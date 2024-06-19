@@ -19,7 +19,7 @@ export function AddProduct() {
     const handleSubmit = (event) => {
       event.preventDefault();
       alert(
-          `\nName: ${formData.name}\nDescription: ${formData.description}\nCategory: ${formData.category}\nquantity: ${formData.quantity}\nPrice: ${formData.price},  `
+          `\nName         : ${formData.name}\nDescription: ${formData.description}\nCategory    : ${formData.category}\nquantity     : ${formData.quantity}\nPrice           : ${formData.price},  `
       );
       console.log(formData);
 };
