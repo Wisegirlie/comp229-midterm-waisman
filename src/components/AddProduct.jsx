@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./forms.css"
 
 export function AddProduct() {
 
@@ -18,7 +19,7 @@ export function AddProduct() {
     const handleSubmit = (event) => {
       event.preventDefault();
       alert(
-          `Name: ${formData.name}\nDescription: ${formData.description}\nCategory: ${formData.category}\nquantity: ${formData.quantity}\nPrice: ${formData.price},  `
+          `\nName: ${formData.name}\nDescription: ${formData.description}\nCategory: ${formData.category}\nquantity: ${formData.quantity}\nPrice: ${formData.price},  `
       );
       console.log(formData);
 };
@@ -34,7 +35,7 @@ export function AddProduct() {
     };
            
   return (
-    <div className="addproduct_global">
+    <div className="form_global">
        <h2>ADDProduct</h2>
 
        <form onSubmit={handleSubmit} className="">

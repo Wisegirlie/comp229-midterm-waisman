@@ -55,7 +55,8 @@ function LoginForm() {
                 <button type="button" onClick={handleCancel}>Cancel</button>
             </form>
 
-                {/* <label className="hook__text">Email</label>
+                {/* 
+                <label className="hook__text">Email</label>
                 <input
                     type="email"
                     className="hook__input"
