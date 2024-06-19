@@ -10,21 +10,31 @@ export function SignUpUser() {
             alert("Passwords do not match");
             return;
         } 
-        else {       
+        else {   
+            console.log(data);    
             alert(
                 `
             First Name : ${data.firstName}
             Last Name  : ${data.lastName}
             Username   : ${data.userName}
-            Email        : ${data.email}
+            Email          : ${data.email}
             Password   : ${data.password}`
-            );
-            console.log(data);
+            );            
         }
     };
 
     const password = watch('password');
-          
+
+    const handleCancel = () => {       
+        setFormData({
+            name: '',
+            description: '',
+            category: '',
+            quantity: '',
+            price: ''
+        });
+    };
+     
   return (
     <div className="form_global">
        <h2>SignUpUser</h2>
@@ -34,7 +44,7 @@ export function SignUpUser() {
                 <label htmlFor="firstName">First Name:</label>
                 <input  id="firstName"   {...register("firstName", { required: "First name is required" })}                   
                 />
-                {errors.firstName && <p >{errors.firstName.message}</p>}
+                {errors.firstName && <p className='error_text' >{errors.firstName.message}</p>}
                 <br />
             
                 <label htmlFor="lastName">Last Name:</label>
@@ -42,14 +52,14 @@ export function SignUpUser() {
                     id="lastName"
                     {...register("lastName", { required: "Last name is required" })}                   
                 />
-                {errors.lastName && <p>{errors.lastName.message}</p>}
+                {errors.lastName && <p className='error_text'>{errors.lastName.message}</p>}
                 <br />
                 <label htmlFor="userName" >Username:</label>
                 <input
                     id="userName"
                     {...register("userName", { required: "Username is required" })}
                 />
-                {errors.userName && <p>{errors.userName.message}</p>}
+                {errors.userName && <p className='error_text'>{errors.userName.message}</p>}
                 <br />
                 <label htmlFor="email">Email:</label>
                 <input
@@ -57,7 +67,7 @@ export function SignUpUser() {
                     {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
                 />
                 {errors.email && (
-                    <p>Email is required and must be valid</p>
+                    <p className='error_text'>Email is required and must be valid</p>
                 )}
                 <br />        
                 <label htmlFor="password">Password:</label>
@@ -65,7 +75,7 @@ export function SignUpUser() {
                     type="password"
                     {...register("password", { required: true })}
                 />
-                {errors.password && <p>Password is required</p>}
+                {errors.password && <p className='error_text'>Password is required</p>}
                 <br />
                 <label htmlFor="confirmPassword">Confirm Password:</label>
                 <input
@@ -73,7 +83,7 @@ export function SignUpUser() {
                     type="password"
                     {...register("confirmPassword", { required: true })}
                 />
-                {errors.confirmPassword && <p>Passwords do not match</p>}
+                {errors.confirmPassword && <p className='error_text'>Passwords do not match</p>}
                 <br />
 
             <button type="submit">Submit</button>
